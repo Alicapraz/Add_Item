@@ -6,5 +6,14 @@ import { Component } from '@angular/core';
   styleUrl: './app.component.css'
 })
 export class AppComponent {
-  title = 'add_item';
+  itemList: string[] = [];
+  inputValue: string = '';
+
+  addItem() {
+    if (this.inputValue.trim() !== '') {
+      this.itemList.push(this.inputValue.trim());
+      this.inputValue = '';
+    }
+  }
+  
 }
